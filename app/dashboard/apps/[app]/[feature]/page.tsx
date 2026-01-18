@@ -7,8 +7,7 @@ type FeatureComponentMap = Record<
   Record<string, ComponentType>
 >;
 
-const DISPATCHER =
-  FEATURE_DISPATCHER as unknown as FeatureComponentMap;
+const DISPATCHER = FEATURE_DISPATCHER as unknown as FeatureComponentMap;
 
 export default async function FeaturePage({
   params,
