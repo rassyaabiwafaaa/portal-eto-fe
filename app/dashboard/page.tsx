@@ -51,7 +51,7 @@ export default function DashboardPage() {
       {/* Content Server */}
       {/* Card */}
       <div className="flex flex-wrap gap-4 justify-between">
-        {Array.from({ length: 100 }).map((_, index) => (
+        {Array.from({ length: 10 }).map((_, index) => (
         <CardServer key={index} />
       ))}
       </div>

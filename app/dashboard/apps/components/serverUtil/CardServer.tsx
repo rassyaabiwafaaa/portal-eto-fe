@@ -10,7 +10,7 @@ export default function CardServer() {
 
   return (
     /* h-fit memastikan card tidak memaksa tinggi penuh */
-    <div className="card bg-base-100 w-96 shadow-sm h-fit"> 
+    <div className="card bg-base-100 w-96 shadow-sm h-fit transition-transform duration-300 ease-in-out"> 
       <div className="card-body">
         <h2 className="card-title -mb-2">WS BRIVA</h2>
         <p className="text-[12px] mb-2">172.18.141.21</p>
@@ -29,13 +29,18 @@ export default function CardServer() {
         </div>
 
         {/* Detail info server dengan transisi sederhana jika perlu */}
-        {isActive && (
-          <div className="mt-4 pt-4 border-t border-base-200 text-sm space-y-1">
-            <div className="flex justify-between"><span>CPU</span> <span>50%</span></div>
-            <div className="flex justify-between"><span>Memory</span> <span>50%</span></div>
-            <div className="flex justify-between"><span>Disk</span> <span>50%</span></div>
+        <div className={`grid transition-all duration-300 ease-in-out ${
+          isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}>
+          <div className="overflow-hidden">
+            <div className="mt-4 pt-4 border-t border-base-200 text-sm space-y-1">
+              <div className="flex justify-between"><span>CPU</span> <span>50%</span></div>
+              <div className="flex justify-between"><span>Memory</span> <span>50%</span></div>
+              <div className="flex justify-between"><span>Disk</span> <span>50%</span></div>
+            </div>
           </div>
-        )}
+        </div>
+
       </div>
     </div>
   )
