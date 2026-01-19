@@ -39,4 +39,13 @@ export const APP_MENUS: AppMenu[] = [
       { key: "patching-sa", label: "Patching SA Only" },
     ],
   },
+   {
+    type: "group",
+    key: "span",
+    label: "SPAN",
+    features: [
+      { key: "inquiry-va", label: "SPAN INQUIRY VA" },
+      { key: "span-reject", label: "SPAN REJECT" },
+    ],
+  },
 ];

@@ -4,9 +4,9 @@ export default function DashboardPage() {
   return (
     <div>
       {/* Dashboard Overview, Generate Resume, Generate Schedule */}
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-col sm:flex-row justify-between">
         {/* Title and Button for Generate Resume and Schedule */}
-        <h1 className="text-2xl font-semibold">Dashboard Overview</h1>
+        <h1 className="text-2xl md:text-lg font-semibold mb-3 md:mb-0">Dashboard Overview</h1>
 
         <div className="flex gap-2 text-white">
           {/* Generate Schedule */}
@@ -50,10 +50,10 @@ export default function DashboardPage() {
 
       {/* Content Server */}
       {/* Card */}
-      <div className="flex flex-wrap gap-4 justify-between">
+      <div className="w-full flex flex-wrap gap-6.5 justify-start">
         {Array.from({ length: 10 }).map((_, index) => (
-        <CardServer key={index} />
-      ))}
+          <CardServer key={index} />
+        ))}
       </div>
     </div>
   );
