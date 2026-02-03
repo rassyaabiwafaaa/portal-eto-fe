@@ -53,8 +53,8 @@ export const APP_MENUS: AppMenu[] = [
   },
   {
     type: "group",
-    key: "reports",
-    label: "REPORTS",
+    key: "third-party-reports",
+    label: "Third Party Reports",
     features: [
       { key: "reports", label: "REPORTS" },
     ],

@@ -347,3 +347,100 @@ export const spanInqVaDummyData =[
                 "IsValidBrivaNo": true
             }
 ]
+
+// Briva Test Connection
+export const dummyTesConnectionBriva = {
+  "code": 200,
+  "message": "Success inquiry briva-api",
+  "data": [
+    {
+      "ip_addr": "172.18.44.50",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.18.46.180",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.18.46.181",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.18.47.49",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.18.47.50",
+      "response_code": "99",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.18.47.51",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.19.44.66",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.19.46.44",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.19.46.45",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.19.39.189",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.19.39.190",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.19.39.191",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.28.73.198",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.28.73.199",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.28.73.200",
+      "response_code": "09",
+      "response_desc": "Error Koneksi Indonesia (Web Exeption)"
+    },
+    {
+      "ip_addr": "172.28.73.201",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.28.73.202",
+      "response_code": "00",
+      "response_desc": "Success"
+    },
+    {
+      "ip_addr": "172.28.73.203",
+      "error": "Post \"http://172.28.73.203:8985/api/Terminal/inquiryTerminal\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"
+    }
+  ]
+}
