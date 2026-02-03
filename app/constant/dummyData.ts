@@ -1,4 +1,4 @@
-const saOnlyDummyData = [
+export const saOnlyDummyData = [
         {
             "IDSISPEN": "260119041050",
             "IDSETORAN": "820260119639009",
@@ -306,5 +306,44 @@ const saOnlyDummyData = [
             "TGLUPDATE": "2026-01-19T17:44:06.060Z"
         },
     ];
-
-export default saOnlyDummyData;
+export const spanInqVaDummyData =[
+     {
+                "DocumentNumber": "260660000000789000001",
+                "DocumentDate": "2026-01-22",
+                "BeneficiaryBankCode": "520002000990",
+                "StatusCode": "0000",
+                "EmailAddress": "",
+                "BeneficiaryAccount": "651436912501000",
+                "Amount": "43760000",
+                "BeneficiaryBank": "BANK RAKYAT INDONESIA",
+                "PaymentMethode": "11",
+                "AgentBankAccountNumber": "032901003295305",
+                "IsValidBrivaNo": true
+            },
+            {
+                "DocumentNumber": "260660000000790000001",
+                "DocumentDate": "2026-01-22",
+                "BeneficiaryBankCode": "520002000990",
+                "StatusCode": "0000",
+                "EmailAddress": "",
+                "BeneficiaryAccount": "651436912501000",
+                "Amount": "13856000",
+                "BeneficiaryBank": "BANK RAKYAT INDONESIA",
+                "PaymentMethode": "11",
+                "AgentBankAccountNumber": "032901003295305",
+                "IsValidBrivaNo": true
+            },
+            {
+                "DocumentNumber": "260660000000791000001",
+                "DocumentDate": "2026-01-22",
+                "BeneficiaryBankCode": "520002000990",
+                "StatusCode": "0000",
+                "EmailAddress": "",
+                "BeneficiaryAccount": "651436912501000",
+                "Amount": "9750000",
+                "BeneficiaryBank": "BANK RAKYAT INDONESIA",
+                "PaymentMethode": "11",
+                "AgentBankAccountNumber": "032901003295305",
+                "IsValidBrivaNo": true
+            }
+]

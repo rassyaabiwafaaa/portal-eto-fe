@@ -37,6 +37,7 @@ export const APP_MENUS: AppMenu[] = [
     label: "MPN",
     features: [
       { key: "patching-sa", label: "Patching SA Only" },
+      { key: "patching-dnp-&-lhp", label: "Patching DNP & LHP" },
     ],
   },
    {
@@ -46,6 +47,16 @@ export const APP_MENUS: AppMenu[] = [
     features: [
       { key: "inquiry-va", label: "SPAN INQUIRY VA" },
       { key: "span-reject", label: "SPAN REJECT" },
+      { key: "span-bo-valas", label: "SPAN BO VALAS" },
+      { key: "span-bpd-riau", label: "SPAN BPD RIAU" },
+    ],
+  },
+  {
+    type: "group",
+    key: "reports",
+    label: "REPORTS",
+    features: [
+      { key: "reports", label: "REPORTS" },
     ],
   },
 ];
