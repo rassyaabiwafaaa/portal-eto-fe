@@ -348,6 +348,45 @@ export const spanInqVaDummyData =[
             }
 ]
 
+// Span Reject Dummy Data
+export const spanRejectDummyData =[
+     {
+                "DocumentNumber": "260660000000789000001",
+                "DocumentDate": "2026-01-22",
+                "BeneficiaryBankCode": "520002000990",
+                "StatusCode": "0000",
+                "EmailAddress": "",
+                "BeneficiaryAccount": "651436912501000",
+                "Amount": "43760000",
+                "BeneficiaryBank": "BANK RAKYAT INDONESIA",
+                "PaymentMethode": "11",
+                "AgentBankAccountNumber": "032901003295305",
+            },
+            {
+                "DocumentNumber": "260660000000790000001",
+                "DocumentDate": "2026-01-22",
+                "BeneficiaryBankCode": "520002000990",
+                "StatusCode": "0000",
+                "EmailAddress": "",
+                "BeneficiaryAccount": "651436912501000",
+                "Amount": "13856000",
+                "BeneficiaryBank": "BANK RAKYAT INDONESIA",
+                "PaymentMethode": "11",
+                "AgentBankAccountNumber": "032901003295305",
+            },
+            {
+                "DocumentNumber": "260660000000791000001",
+                "DocumentDate": "2026-01-22",
+                "BeneficiaryBankCode": "520002000990",
+                "StatusCode": "0000",
+                "EmailAddress": "",
+                "BeneficiaryAccount": "651436912501000",
+                "Amount": "9750000",
+                "BeneficiaryBank": "BANK RAKYAT INDONESIA",
+                "PaymentMethode": "11",
+                "AgentBankAccountNumber": "032901003295305",
+            }
+]
 // Briva Test Connection
 export const dummyTesConnectionBriva = {
   "code": 200,
