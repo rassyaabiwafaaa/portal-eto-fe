@@ -2,7 +2,7 @@ import React from "react";
 import BrivaOnOff from "./briva/BrivaOnOff";
 import ConnectionTest from "./briva/ConnectionTest";
 import MpnPatchingSA from "./mpn/SaOnly";
-import SPANInqVa from "./span/SPANInqVa";
+import SPANInqVa from "./span/INQVA/SPANInqVa";
 
 export const FEATURE_DISPATCHER = {
   briva: {
@@ -14,6 +14,6 @@ export const FEATURE_DISPATCHER = {
   },
   span:{
     "inquiry-va": SPANInqVa,
-    "span-reject": React.lazy(() => import("./span/SPANReject")),
+    "span-reject": React.lazy(() => import("./span/Reject/SPANReject")),
   }
 } as const;
