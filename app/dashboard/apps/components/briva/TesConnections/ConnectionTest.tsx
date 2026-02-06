@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import HeaderBrivaOnOff from "./HeaderBrivaOnOff";
 import TableTestConnection from "./TableTestConnection";
 import { handlerWSBrivaMapping } from "@/app/utils/handlerWSBrivaMapping";
 import { dummyTesConnectionBriva } from "@/app/constant/dummyData";
+import HeaderBrivaOnOff from "../ONOFF/HeaderBrivaOnOff";
 
 const CONNECTION_CONFIG = [
   { label: "Data Center", ipPrefix: "172.18" },

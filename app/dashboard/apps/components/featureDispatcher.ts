@@ -1,13 +1,12 @@
 import React from "react";
-import BrivaOnOff from "./briva/BrivaOnOff";
-import ConnectionTest from "./briva/ConnectionTest";
-import MpnPatchingSA from "./mpn/SaOnly";
+import BrivaOnOff from "./briva/ONOFF/BrivaOnOff";
+import MpnPatchingSA from "./mpn/SAOnly/SaOnly";
 import SPANInqVa from "./span/INQVA/SPANInqVa";
 
 export const FEATURE_DISPATCHER = {
   briva: {
     "on-off": BrivaOnOff,
-    "connection-test": ConnectionTest,
+    "connection-test": React.lazy(() => import("./briva/TesConnections/ConnectionTest")),
   },
   mpn: {
     "patching-sa": MpnPatchingSA,

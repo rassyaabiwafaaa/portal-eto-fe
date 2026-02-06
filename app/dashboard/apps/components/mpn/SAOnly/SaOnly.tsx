@@ -1,4 +1,4 @@
-import {saOnlyDummyData} from "../../../../constant/dummyData";
+import {saOnlyDummyData} from "../../../../../constant/dummyData";
 import TableContentSAOnly from "./TableContentSAOnly";
 
 export default function SaOnly() {
