@@ -15,5 +15,7 @@ export const FEATURE_DISPATCHER = {
   span:{
     "inquiry-va": SPANInqVa,
     "span-reject": React.lazy(() => import("./span/Reject/SPANReject")),
+    "span-bo-valas": React.lazy(() => import("./span/BOValas/SPANBOValas")),
+    "span-bpd-riau": React.lazy(() => import("./span/BPDRiau/SPANBPDRiau")),
   }
 } as const;
