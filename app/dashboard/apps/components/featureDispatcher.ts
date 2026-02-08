@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from "next/dynamic"; // Gunakan ini untuk Next.js
 import BrivaOnOff from "./briva/ONOFF/BrivaOnOff";
 import MpnPatchingSA from "./mpn/SAOnly/SaOnly";
 import SPANInqVa from "./span/INQVA/SPANInqVa";
@@ -6,15 +7,17 @@ import SPANInqVa from "./span/INQVA/SPANInqVa";
 export const FEATURE_DISPATCHER = {
   briva: {
     "on-off": BrivaOnOff,
-    "connection-test": React.lazy(() => import("./briva/TesConnections/ConnectionTest")),
+    "connection-test": dynamic(() => import("./briva/TesConnections/ConnectionTest")),
   },
   mpn: {
     "patching-sa": MpnPatchingSA,
+    // Hindari simbol '&' agar URL aman
+    "patching-dnp-lhp": dynamic(() => import("./mpn/DNPLHP/MPNDNPLHP")),
   },
-  span:{
+  span: {
     "inquiry-va": SPANInqVa,
-    "span-reject": React.lazy(() => import("./span/Reject/SPANReject")),
-    "span-bo-valas": React.lazy(() => import("./span/BOValas/SPANBOValas")),
-    "span-bpd-riau": React.lazy(() => import("./span/BPDRiau/SPANBPDRiau")),
+    "span-reject": dynamic(() => import("./span/Reject/SPANReject")),
+    "span-bo-valas": dynamic(() => import("./span/BOValas/SPANBOValas")),
+    "span-bpd-riau": dynamic(() => import("./span/BPDRiau/SPANBPDRiau")),
   }
 } as const;

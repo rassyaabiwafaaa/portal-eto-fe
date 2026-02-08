@@ -37,7 +37,7 @@ export const APP_MENUS: AppMenu[] = [
     label: "MPN",
     features: [
       { key: "patching-sa", label: "Patching SA Only" },
-      { key: "patching-dnp-&-lhp", label: "Patching DNP & LHP" },
+      { key: "patching-dnp-lhp", label: "Patching DNP & LHP" },
     ],
   },
    {

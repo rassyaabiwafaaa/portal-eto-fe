@@ -483,3 +483,24 @@ export const dummyTesConnectionBriva = {
     }
   ]
 }
+
+// Dummy DNP LHP Data
+export const dummyDnpLhpData  = {
+    "code": 200,
+    "message": "Success get nota kredit and transaksi",
+    "data": {
+        "nota_kredit": {
+            "id_nota_kredit": "030101016288713",
+            "total_penerimaan": 43,
+            "jumlah_penerimaan": "398566.74",
+            "tgl_buku": "03022026",
+            "mata_uang": "USD"
+        },
+        "transaksi": {
+          "NOMOR_REMITTANCE": "030101016288713",
+          "AMOUNT_MUTASI": 398566.74,
+          "AMOUNT_RTGS": 0,
+          "NOMINAL_VALAS": 398566.74,
+        }
+    }
+}
