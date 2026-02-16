@@ -2,29 +2,37 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useMutation } from "@tanstack/react-query";
+import api from "../utils/api";
+import { log } from "console";
 
 export default function LoginPage() {
   const router = useRouter();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("yosua");
+  const [password, setPassword] = useState("@Yosua85");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // function mutate untuk handle login, nanti akan dipanggil di handleSubmit
+  const loginMutation = useMutation({
+    mutationFn : async (payload : any) => {
+      const response = await api.post("/auth/v2/login/user", payload);
+      return response.data;
+    },
+    onSuccess: (data) => {
+      localStorage.setItem("token", data.token);
+      router.push("/dashboard");
+    },
+    onError: (error : any) => {
+      setError(error.response?.data?.message || "Login failed");
+    },
+  })
+
+  // function untuk handle submit form login
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
-    setLoading(true);
-
-    // SIMULASI LOGIN
-    setTimeout(() => {
-      if (email === "admin" && password === "123" || email === " " && password === " ") {
-        router.push("/dashboard");
-      } else {
-        setError("Invalid email or password");
-      }
-      setLoading(false);
-    }, 1000);
+    loginMutation.mutate({ email, password });
   };
 
   return (
@@ -72,9 +80,9 @@ export default function LoginPage() {
             <button
               type="submit"
               className="btn bg-[#3771B8] w-full"
-              disabled={loading}
+              disabled={loginMutation.isPending}
             >
-              {loading ? "Signing in..." : "Login"}
+              {loginMutation.isPending ? "Signing in..." : "Login"}
             </button>
           </form>
         </div>
