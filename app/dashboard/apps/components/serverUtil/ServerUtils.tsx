@@ -20,8 +20,8 @@ export default function ServerUtils({ role, serverData }: { role: string, server
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-gray-700">
         <h1 className="text-xl font-bold italic">Dashboard Overview</h1>
         <div className="flex gap-2">
-          <button className="btn btn-sm btn-outline border-[#3771B8] text-[#3771B8] hover:bg-[#3771B8] hover:text-white transition-colors">Generate Schedule</button>
-          <button className="btn btn-sm bg-[#3771B8] border-none text-white hover:bg-[#2c5a94]">Generate Resume</button>
+          <button className="btn btn-warning">Generate Schedule</button>
+          <button className="btn btn-warning">Generate Resume</button>
         </div>
       </div>
 
