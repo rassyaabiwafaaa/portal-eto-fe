@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://aa9b2fce-fc35-4a94-9412-fd3c5eaa5668.mock.pstmn.io/api",
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || "https://d1b41789-e715-4549-ac8d-551b39ef64c7.mock.pstmn.io",
   headers: {
     "Content-Type": "application/json",
   },

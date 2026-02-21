@@ -1,47 +1,57 @@
-'use client'
-import React, { useState } from 'react'
+"use client";
 
-export default function CardServer() {
-  const [isActive, setIsActive] = useState(false);
+import React from 'react';
 
-  const handlerClick = () => {
-    setIsActive(!isActive);
-  }
+export default function CardServer({ server, onDetailClick }: { server: any, onDetailClick: (s: any) => void }) {
+  const getProgressColor = (val: number) => {
+    if (val > 80) return "progress-error";
+    if (val > 60) return "progress-warning";
+    return "progress-success";
+  };
 
   return (
-    /* h-fit memastikan card tidak memaksa tinggi penuh */
-    <div className="card bg-base-100 w-96 shadow-sm h-fit transition-transform duration-300 ease-in-out"> 
-      <div className="card-body">
-        <h2 className="card-title -mb-2">WS BRIVA</h2>
-        <p className="text-[12px] mb-2">172.18.141.21</p>
-        
-        <div className="flex items-center justify-between">
-          <h2 
-            className="text-[12px] cursor-pointer text-blue-500 hover:underline" 
-            onClick={handlerClick}
-          >
-            {isActive ? "Hide details" : "See more details"}
-          </h2>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline bg-red-500 text-white border-none">CPU</div>
-            <div className="badge badge-outline bg-red-500 text-white border-none">Memory</div>
+    <div className="card bg-base-100 shadow-md hover:shadow-lg transition-all border border-base-200">
+      <div className="card-body p-5">
+        <div className="flex justify-between items-start mb-2">
+          <div className="max-w-[70%]">
+            <h3 className="font-bold text-sm leading-tight truncate" title={server.displayName}>
+              {server.displayName}
+            </h3>
+            <p className="text-[10px] font-mono opacity-50">{server.ipAddress}</p>
           </div>
+          <span className="badge badge-success badge-xs py-2 text-[9px] font-bold">{server.uptime.text}</span>
         </div>
 
-        {/* Detail info server dengan transisi sederhana jika perlu */}
-        <div className={`grid transition-all duration-300 ease-in-out ${
-          isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}>
-          <div className="overflow-hidden">
-            <div className="mt-4 pt-4 border-t border-base-200 text-sm space-y-1">
-              <div className="flex justify-between"><span>CPU</span> <span>50%</span></div>
-              <div className="flex justify-between"><span>Memory</span> <span>50%</span></div>
-              <div className="flex justify-between"><span>Disk</span> <span>50%</span></div>
+        <div className="space-y-4 mt-2">
+          {/* CPU Stats */}
+          <div>
+            <div className="flex justify-between text-[10px] mb-1">
+              <span className="font-medium text-gray-500">CPU</span>
+              <span className="font-bold">{server.cpu.percentage}%</span>
             </div>
+            <progress className={`progress w-full ${getProgressColor(server.cpu.percentage)}`} value={server.cpu.percentage} max="100"></progress>
+          </div>
+
+          {/* Memory Stats */}
+          <div>
+            <div className="flex justify-between text-[10px] mb-1">
+              <span className="font-medium text-gray-500">RAM</span>
+              <span className="font-bold">{server.memory.percentage}%</span>
+            </div>
+            <progress className={`progress w-full ${getProgressColor(server.memory.percentage)}`} value={server.memory.percentage} max="100"></progress>
           </div>
         </div>
-
+        
+        <div className="card-actions justify-end mt-4">
+          {/* Klik tombol ini memicu fungsi onDetailClick yang dikirim Parent */}
+          <button 
+            onClick={() => onDetailClick(server)}
+            className="btn btn-xs btn-link p-0 no-underline text-[#3771B8] hover:text-blue-800"
+          >
+            View Details →
+          </button>
+        </div>
       </div>
     </div>
-  )
+  );
 }

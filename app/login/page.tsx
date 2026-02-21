@@ -21,7 +21,9 @@ export default function LoginPage() {
       return response.data;
     },
     onSuccess: (data) => {
-      localStorage.setItem("token", data.token);
+      console.log("Login berhasil, data:", data.user.role);
+      localStorage.setItem("token", data.user.token);
+      localStorage.setItem("role", data.user.role);
       router.push("/dashboard");
     },
     onError: (error : any) => {
@@ -79,7 +81,7 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              className="btn bg-[#3771B8] w-full"
+              className="btn btn-primary w-full"
               disabled={loginMutation.isPending}
             >
               {loginMutation.isPending ? "Signing in..." : "Login"}
