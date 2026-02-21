@@ -12,7 +12,6 @@ export default function DashboardPage() {
     setRole(localStorage.getItem("role"));
   }, []);
 
-  // Semua query ditarik ke atas (Parent)
   const { data, isLoading, isError } = useQuery({
     queryKey: ["server-util-data", role],
     queryFn: () => fetchUtilData(role!),
@@ -32,10 +31,27 @@ export default function DashboardPage() {
     return <div className="alert alert-error m-5">Gagal memuat data dari server.</div>;
   }
 
-  // Kirim data ke ServerUtils sebagai props
+  // LOGIKA SORTING PRIORITAS
+  const rawServers = data?.data?.servers || [];
+  const sortedServers = [...rawServers].sort((a, b) => {
+    // Cek Threshold A
+    const aCritical = a.cpu.percentage > 90 || 
+                      a.memory.percentage > 90 || 
+                      a.disk.some((d: any) => d.percentage > 95);
+    
+    // Cek Threshold B
+    const bCritical = b.cpu.percentage > 90 || 
+                      b.memory.percentage > 90 || 
+                      b.disk.some((d: any) => d.percentage > 95);
+
+    if (aCritical && !bCritical) return -1; // A naik
+    if (!aCritical && bCritical) return 1;  // B naik
+    return 0;
+  });
+
   return (
     <main className="p-4 md:p-8 bg-base-200 min-h-screen">
-      <ServerUtils role={role} serverData={data?.data?.servers || []} />
+      <ServerUtils role={role} serverData={sortedServers} />
     </main>
   );
 }

@@ -53,6 +53,14 @@ export const APP_MENUS: AppMenu[] = [
   },
   {
     type: "group",
+    key: "cashcard",
+    label: "CASHCARD",
+    features: [
+      { key: "update-status-cashcard", label: "UPDATE STATUS" }
+    ],
+  },
+  {
+    type: "group",
     key: "third-party-reports",
     label: "Third Party Reports",
     features: [

@@ -19,5 +19,8 @@ export const FEATURE_DISPATCHER = {
     "span-reject": dynamic(() => import("./span/Reject/SPANReject")),
     "span-bo-valas": dynamic(() => import("./span/BOValas/SPANBOValas")),
     "span-bpd-riau": dynamic(() => import("./span/BPDRiau/SPANBPDRiau")),
-  }
+  },
+  cashcard: {
+    "update-status-cashcard": dynamic(() => import("./cashcard/UpdateStatusCashcard")),
+  },
 } as const;
